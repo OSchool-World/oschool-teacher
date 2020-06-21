@@ -1,0 +1,991 @@
+@import "shadow-mixin.scss";
+
+$blue: #4554D1;
+$green: #00E049;
+$red: #FA002E;
+$orange: #FFB900;
+$purple: #DC00F4;
+$pink: #FF0099;
+$brown: #AC611B;
+
+$primary-color: #3A237E;
+
+$nav-width: 80px;
+
+//Shadow
+.mdsh-1 {
+    @include BoxShadow(1);
+}
+.mdsh-2 {
+    @include BoxShadow(2);
+}
+.mdsh-3 {
+    @include BoxShadow(3);
+}
+.mdsh-4 {
+    @include BoxShadow(4);
+}
+.mdsh-6 {
+    @include BoxShadow(6);
+}
+.mdsh-8 {
+    @include BoxShadow(8);
+}
+.mdsh-9 {
+    @include BoxShadow(9);
+}
+.mdsh-12 {
+    @include BoxShadow(12);
+}
+.mdsh-16 {
+    @include BoxShadow(16);
+}
+.mdsh-24 {
+    @include BoxShadow(24);
+}
+
+@mixin HideSpinButtons {
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
+.dir-ltr {
+    direction: ltr !important;
+}
+
+.dir-rtl {
+    direction: rtl !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+* {
+    direction: rtl;
+    box-sizing: border-box;
+    font-family: IRANSans;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: $nav-width;
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    z-index: 102;
+
+    #create-class {
+        color: #909CB8;
+        font-size: 24px;
+        margin-top: 6px;
+        line-height: 1;
+        cursor: default;
+
+        i {
+            cursor: pointer;
+        }
+
+        &:hover, &:active {
+            background-color: unset;
+        }
+    }
+
+    .course {
+        $w: 50px;
+        $b: 2px;
+        width: $w;
+        height: $w;
+        line-height: $w - 2*$b;
+        border: solid $b white;
+        border-radius: 50%;
+        margin: 20px auto;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+
+    > .btns {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+
+            li {
+                $b: 6px;
+                margin: 24px 0;
+                border-right: solid $b transparent;
+                border-left: solid $b transparent;
+                cursor: pointer;
+
+                &.router-link-active {
+                    border-right: solid $b white;
+                }
+
+                div.icon {
+                    font-size: 34px;
+                }
+            }
+        }
+
+        &.btns-small {
+            ul {
+                li {
+                    margin: 20px 0;
+
+                    div.icon {
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: $nav-width;
+    padding: 20px 10px;
+    background-color: #EDEDED;
+    z-index: 100;
+
+    section {
+        width: 100%;
+
+        .panel {
+            background-color: white;
+            @include BoxShadow(8);
+            border-radius: 30px;
+            padding: 30px 0;
+            width: 100%;
+
+            > .panel-title {
+                color: rgb(176, 188, 214);
+                font-size: 14px;
+                text-align: right;
+                padding: 0 20px;
+                margin-top: -10px;
+            }
+        }
+    }
+}
+
+table.list {
+    td, th {
+        border-top: solid 1px #DCE2EE;
+        border-bottom: solid 1px #DCE2EE;
+        padding: 5px 0;
+        color: #909CB8;
+    }
+
+    td.row-num {
+        width: 40px;
+        text-align: center;
+    }
+
+    th.student {
+        color: #909CB8;
+        text-align: right;
+    }
+
+    td.student {
+        div.info {
+            display: flex;
+            align-items: center;
+            color: #909CB8;
+
+            div.image {
+                $w: 50px;
+                width: $w;
+                height: $w;
+                line-height: $w+4px;
+                background-color: #DCE2EE;
+                color: #909CB8;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 30px;
+    
+                i {
+                    // margin-top: 4px;
+                }
+    
+                img {
+                    width: $w;
+                    height: $w;
+                    border-radius: 50%;
+                    margin-top: -4px;
+                }
+            }
+    
+            div.name {
+                text-align: right;
+                margin-right: 5px;
+                line-height: 1.2;
+    
+                .fname {
+                    font-size: 14px;
+                }
+    
+                .lname {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//Components
+div.text-editor {
+    .editor-toolbar {
+        background-color: white;
+        padding: 5px 20px;
+        height: 40px;
+        border-radius: 20px;
+        @include BoxShadow(4);
+        // opacity: 0;
+        // transition: opacity 0.3s;
+
+        &.is-show {
+            opacity: 1;
+        }
+
+        .btn {
+            .active {
+
+            }
+        }
+    }
+
+    .editor {
+        .ProseMirror {
+            min-height: 300px;
+            margin-top: 4px;
+            border: 2px solid #DCE2EE;
+            padding: 20px;
+            border-radius: 20px;
+
+            &.ProseMirror-focused {
+                outline: none;
+                border-color: $blue;
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+
+                &.is-editor-empty:first-child {
+                    direction: rtl;
+                    text-align: right;
+    
+                    &::before
+                    {
+                        content: attr(data-empty-text);
+                        float: left;
+                        color: #aaa;
+                        pointer-events: none;
+                        height: 0;
+                        font-style: italic;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//Home
+section.home {
+    .panel-class-name {
+        background-color: $blue;
+        color: white;
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .panel-events {
+        .not-found {
+            color: #909CB8;
+        }
+
+        table {
+            width: 100%;
+            color: #909CB8;
+
+            tr {
+                &.PUBLIC_CUSTOM_EVENT .type-symbol {
+                    color: $orange;
+                }
+
+                &.CLASS_CUSTOM_EVENT .type-symbol {
+                    color: $red;
+                }
+            }
+
+            td {
+                border-top: #DCE2EE solid 1px;
+                border-bottom: #DCE2EE solid 1px;
+                height: 40px;
+                padding: 6px 0;
+
+                &.type-symbol {
+                    font-size: 10px;
+                    padding: 0 4px;
+                }
+
+                &.day {
+                    width: 80px;
+                }
+
+                &.desc {
+                    font-size: 14px;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+    .panel-count {
+        background-color: $blue;
+
+        .icon {
+            background-color: white;
+            color: $blue;
+            font-size: 40px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .count {
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .unit {
+            font-size: 24px;
+            font-weight: lighter;
+            line-height: 0.6;
+        }
+
+        &.panel-orange {
+            background-color: $orange;
+
+            .icon {
+                color: $orange;
+            }
+        }
+
+        &.panel-green {
+            background-color: $green;
+
+            .icon {
+                color: $green;
+            }
+        }
+
+        &.panel-red {
+            background-color: $red;
+
+            .icon {
+                color: $red;
+            }
+        }
+    }
+}
+
+//Student
+ul.student-list {
+    list-style: none;
+    padding: 0;
+    color: #909CB8;
+    margin: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 10px 6px;
+        cursor: pointer;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+
+        &:hover:not(.add) {
+            background-color: rgb(240, 240, 240);
+        }
+
+        &.active {
+            border-right: 6px solid $blue;
+            color: $blue;
+        }
+
+        &.add {
+            font-size: 40px;
+            cursor: default;
+            i {
+                cursor: pointer;
+            }
+        }
+
+        div.row-num {
+            width: 20px;
+            text-align: center;
+        }
+
+        div.image {
+            $w: 50px;
+            width: $w;
+            height: $w;
+            line-height: $w+4px;
+            background-color: #DCE2EE;
+            color: #909CB8;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+
+            i {
+                // margin-top: 4px;
+            }
+
+            img {
+                width: $w;
+                height: $w;
+                border-radius: 50%;
+                margin-top: -4px;
+            }
+        }
+
+        div.name {
+            text-align: right;
+            margin-right: 5px;
+            line-height: 1.2;
+
+            .fname {
+                font-size: 14px;
+            }
+
+            .lname {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+div.student-information {
+    text-align: center;
+    
+    div.student-image {
+        $img-size: 128px;
+
+        background-color: #DCE2EE;
+        width: $img-size;
+        height: $img-size;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+        cursor: pointer;
+        position: relative;
+
+        i.fa-camera {
+            color: #909CB8;
+            font-size: 50px;
+        }
+
+        img {
+            width: $img-size;
+            height: $img-size;
+            border-radius: 50%;
+        }
+
+        div.delete {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            font-size: 24px;
+            background-color: $red;
+            color: white;
+            cursor: pointer;
+            padding-top: 3px;
+            opacity: 0.8;
+            @include BoxShadow(4);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+div.student-notes {
+    div.notes {
+        > .note {
+            text-align: right;
+            margin-top: 10px;
+
+            > .date {
+                color: #909CB8;
+            }
+
+            > .text {
+                background-color: #EDEDED;
+                color: rgb(64, 73, 94);
+                border-radius: 10px 0 10px 10px;
+                padding: 10px;
+                margin-right: 10px;
+
+                span.text {
+                    white-space: pre-line;
+                }
+
+                div.btns {
+                    font-size: 10px;
+                    color: #909CB8;
+
+                    > div {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    div.collapse-btn {
+        background-color: $primary-color;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        height: 20px;
+        line-height: 18px;
+    }
+
+    div.input {
+        height: 300px;
+    }
+}
+
+//Calendar
+ul.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+
+    li {
+        font-size: 14px;
+        margin: 5px;
+        color: #909CB8;
+
+        input[type=checkbox] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        label {
+
+        }
+
+        .event-color {
+            vertical-align: middle;
+            line-height: 18px;
+        }
+    }
+}
+
+.event-color {
+    font-size: 12px;
+    float: left;
+
+    &.session {
+        color: $blue;
+    }
+
+    &.occasion {
+        color: $green;
+    }
+
+    &.class_custom_event {
+        color: $red;
+    }
+
+    &.public_custom_event {
+        color: $orange;
+    }
+
+    &.home_work {
+        color: $purple;
+    }
+
+    &.other_sessions {
+        color: $brown;
+    }
+}
+
+table.calendar {
+    width: 100%;
+    text-align: center;
+
+    th {
+        border-bottom: solid 1px #909CB8;
+        color: #909CB8;
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+
+        div.day {
+            background-color: white;
+            color: #909CB8;
+            width: 100%;
+            min-width: 100px;
+            height: 150px;
+            border-radius: 40px;
+            @include BoxShadow(8);
+            position: relative;
+
+            div.title {
+                border-bottom: solid 1px #909CB8;
+                border-top-right-radius: 40px;
+                border-top-left-radius: 40px;
+                padding: 10px 0;
+                font-size: 14px;
+            }
+
+            div.events {
+                padding: 10px 5px;
+                // text-align: right;
+
+                div.event {
+                    padding: 2px;
+                    padding-bottom: 16px;
+                    margin: 2px;
+                    cursor: pointer;
+                    display: inline-block;
+                    position: relative;
+
+                    div.desc {
+                        position: absolute;
+                        background-color: black;
+                        color: white;
+                        visibility: hidden;
+                        border-radius: 6px;
+                        padding: 3px;
+                        width: 120px;
+                        top: 100%;
+                        left: 50%;
+                        margin-left: -60px;
+                        text-align: center;
+                        font-size: 14px;
+                        z-index: 300;
+                        white-space: pre-line;
+                    }
+
+                    &:hover {
+                        div.desc {
+                            visibility: visible;
+
+                            &::after {
+                                content: " ";
+                                position: absolute;
+                                bottom: 100%;  /* At the top of the tooltip */
+                                left: 50%;
+                                margin-left: -5px;
+                                border-width: 5px;
+                                border-style: solid;
+                                border-color: transparent transparent black transparent;
+                            }
+                        }
+                    }
+                }
+            }
+
+            div.btns {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 40px;
+                border-bottom-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                background-color: rgba($color: #000000, $alpha: 0.4);
+                // transition: opacity 0.1s;
+                opacity: 0;
+                color: white;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                > div {
+                    font-size: 14px;
+                    line-height: 36px;
+                    cursor: pointer;
+                }
+            }
+
+            &.holiday {
+                div.title {
+                    background-color: $red;
+                    color: white;
+                    border-bottom: solid 1px white;
+                }
+            }
+
+            &.today {
+                div.title {
+                    background-color: $blue;
+                    color: white;
+                    border-bottom: solid 1px white;
+                }
+            }
+        }
+    }
+}
+
+//Class Book
+ul.class-book-dates {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    li {
+        color: #909CB8;
+        cursor: pointer;
+    
+        &.active {
+            color: $blue;
+            font-weight: bold;
+        }
+
+        &:hover:not(.line) {
+
+        }
+
+        &.add {
+            font-size: 40px;
+        }
+
+        &.line {
+            cursor: default;
+            font-size: 40px;
+        }
+
+        .day {
+
+        }
+
+        .date {
+            font-size: 11px;
+        }
+    }
+}
+
+.class-book-section
+{
+    width: 110px;
+    height: 110px;
+    border-radius: 40px;
+    margin: 12px 0;
+    background-color: #DCDFE6;
+    color: #909CB8;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 12px;
+
+    &.router-link-active {
+        background-color: white;
+        color: $blue;
+        @include BoxShadow(12);
+    }
+
+    .icon {
+        font-size: 44px;
+    }
+
+    .title {
+        line-height: 0.2;
+    }
+}
+
+.scroll-y {
+    overflow-y: auto;
+    overflow-y: overlay;
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #909CB8;
+        border-radius: 3px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #4554D1;
+    }
+}
+
+//Class Book - Attendance & Scores
+div.attendance, div.scores {
+    table {
+        border-collapse: collapse;
+
+        td.actions {
+            i.btn-attendance, i.btn-score {
+                display: inline-block;
+                font-size: 40px;
+                cursor: pointer;
+                vertical-align: middle;
+                opacity: 0.3;
+                transition: opacity 0.2s;
+
+                &.btn-present {
+                    color: $green;
+                }
+
+                &.btn-absent {
+                    color: $red;
+                }
+
+                &.btn-delay {
+                    color: $orange;
+                    margin-top: -1px;
+                    margin-right: -1px;
+                }
+
+                &.btn-plus {
+                    color: $green;
+                    margin-top: -1px;
+                    margin-right: -1px;
+                    opacity: 1;
+                }
+
+                &.btn-minus {
+                    color: $red;
+                    margin-top: -1px;
+                    margin-left: -1px;
+                    opacity: 1;
+                }
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+
+            div.delay, div.score {
+                height: 40px;
+                border: solid 1px #DCE2EE;
+                border-radius: 20px;
+                display: inline-block;
+                vertical-align: middle;
+
+                input {
+                    width: 60px;
+                    vertical-align: middle;
+                    margin-left: 10px;
+                    border: none;
+                    text-align: center;
+                    direction: ltr;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    @include HideSpinButtons();
+                }
+            }
+
+            div.score {
+                input {
+                    text-align: center;
+                    margin-left: 0;
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+//Class Book - Lesson Plan
+
+
+//Grades
+section.grades {
+    table {
+        text-align: center;
+
+        th.grade-val, td.grade-val {
+            width: 100px;
+            padding: 5px;
+            direction: ltr;
+
+            i {
+                cursor: pointer;
+            }
+
+            input {
+                width: 60px;
+                text-align: center;
+                direction: ltr;
+                @include HideSpinButtons();
+                margin: auto;
+                padding: 0;
+            }
+        }
+
+        td.add, th.add {
+            width: 40px;
+
+            i {
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+}

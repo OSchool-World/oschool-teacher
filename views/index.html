@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OSchool Teacher</title>
+    <link rel="stylesheet" href="assets/css/fontiran.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        div.loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: white;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="loading" v-if="loading"></div>
+        <nav class="d-flex flex-column mdsh-12">
+            <div class="dropdown dropleft">
+                <div class="course" :title="activeClass ? activeClass.name : ''" @click="isShowClasses = !isShowClasses">
+                    {{ activeClass ? activeClass.getAcronymName() : '?' }}
+                </div>
+                <div class="dropdown-menu dir-rtl text-right" :style="{display: isShowClasses ? 'block' : 'none'}">
+                    <a :class="{'dropdown-item': true, active: activeClass && cls.id == activeClass.id}"
+                        v-for="cls in classes"
+                        href="#"
+                        @click="setActiveClass(cls)"
+                    >
+                        {{ cls.name }}
+                    </a>
+                    <a href="#" id="create-class" class="dropdown-item dir-rtl text-center">
+                        <i class="fas fa-plus-circle" @click="createNewClass"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="btns">
+                <ul>
+                    <router-link tag="li" :to="{name: 'home'}" title="خانه">
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </router-link>
+                    <router-link tag="li" :to="{name: 'students'}" title="دانش‌آموزان">
+                        <div class="icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </router-link>
+                    <router-link tag="li" :to="{name: 'calendar'}" title="تقویم">
+                        <div class="icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </router-link>
+                    <router-link tag="li" :to="{name: 'class_book'}" title="دفتر کلاسی">
+                        <div class="icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </router-link>
+                    <router-link tag="li" :to="{name: 'grades'}" title="نمرات">
+                        <div class="icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </router-link>
+                </ul>
+            </div>
+            <div class="btns btns-small mt-auto">
+                <ul>
+                    <router-link tag="li" :to="{name: 'about'}" title="درباره نرم‌افزار">
+                        <div class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </router-link>
+                    <!-- <li>
+                        <div class="icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+
+        <main class="d-flex pt-4 pb-4 pr-2 pl-2">
+            <router-view></router-view>
+        </main>
+    </div>
+</body>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="../node_modules/moment/min/moment.min.js"></script>
+<script src="../node_modules/moment-jalaali/build/moment-jalaali.js"></script>
+<script src="../node_modules/vue-persian-datetime-picker/dist/vue-persian-datetime-picker-browser.js"></script>
+<script src="index.js"></script>
+
+</html>

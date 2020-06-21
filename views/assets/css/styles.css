@@ -1,0 +1,782 @@
+.mdsh-1 {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-2 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-3 {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-4 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-6 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-8 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-9 {
+  box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-12 {
+  box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-16 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.mdsh-24 {
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.dir-ltr {
+  direction: ltr !important;
+}
+
+.dir-rtl {
+  direction: rtl !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+* {
+  direction: rtl;
+  box-sizing: border-box;
+  font-family: IRANSans;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: #3A237E;
+  color: white;
+  text-align: center;
+  z-index: 102;
+}
+nav #create-class {
+  color: #909CB8;
+  font-size: 24px;
+  margin-top: 6px;
+  line-height: 1;
+  cursor: default;
+}
+nav #create-class i {
+  cursor: pointer;
+}
+nav #create-class:hover, nav #create-class:active {
+  background-color: unset;
+}
+nav .course {
+  width: 50px;
+  height: 50px;
+  line-height: 46px;
+  border: solid 2px white;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+nav > .btns ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+nav > .btns ul li {
+  margin: 24px 0;
+  border-right: solid 6px transparent;
+  border-left: solid 6px transparent;
+  cursor: pointer;
+}
+nav > .btns ul li.router-link-active {
+  border-right: solid 6px white;
+}
+nav > .btns ul li div.icon {
+  font-size: 34px;
+}
+nav > .btns.btns-small ul li {
+  margin: 20px 0;
+}
+nav > .btns.btns-small ul li div.icon {
+  font-size: 26px;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 80px;
+  padding: 20px 10px;
+  background-color: #EDEDED;
+  z-index: 100;
+}
+main section {
+  width: 100%;
+}
+main section .panel {
+  background-color: white;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  padding: 30px 0;
+  width: 100%;
+}
+main section .panel > .panel-title {
+  color: #b0bcd6;
+  font-size: 14px;
+  text-align: right;
+  padding: 0 20px;
+  margin-top: -10px;
+}
+
+table.list td, table.list th {
+  border-top: solid 1px #DCE2EE;
+  border-bottom: solid 1px #DCE2EE;
+  padding: 5px 0;
+  color: #909CB8;
+}
+table.list td.row-num {
+  width: 40px;
+  text-align: center;
+}
+table.list th.student {
+  color: #909CB8;
+  text-align: right;
+}
+table.list td.student div.info {
+  display: flex;
+  align-items: center;
+  color: #909CB8;
+}
+table.list td.student div.info div.image {
+  width: 50px;
+  height: 50px;
+  line-height: 54px;
+  background-color: #DCE2EE;
+  color: #909CB8;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+}
+table.list td.student div.info div.image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: -4px;
+}
+table.list td.student div.info div.name {
+  text-align: right;
+  margin-right: 5px;
+  line-height: 1.2;
+}
+table.list td.student div.info div.name .fname {
+  font-size: 14px;
+}
+table.list td.student div.info div.name .lname {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+div.text-editor .editor-toolbar {
+  background-color: white;
+  padding: 5px 20px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+div.text-editor .editor-toolbar.is-show {
+  opacity: 1;
+}
+div.text-editor .editor .ProseMirror {
+  min-height: 300px;
+  margin-top: 4px;
+  border: 2px solid #DCE2EE;
+  padding: 20px;
+  border-radius: 20px;
+}
+div.text-editor .editor .ProseMirror.ProseMirror-focused {
+  outline: none;
+  border-color: #4554D1;
+}
+div.text-editor .editor .ProseMirror p {
+  margin-bottom: 0.5rem;
+}
+div.text-editor .editor .ProseMirror p.is-editor-empty:first-child {
+  direction: rtl;
+  text-align: right;
+}
+div.text-editor .editor .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-empty-text);
+  float: left;
+  color: #aaa;
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+  float: right;
+}
+
+section.home .panel-class-name {
+  background-color: #4554D1;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+}
+section.home .panel-events .not-found {
+  color: #909CB8;
+}
+section.home .panel-events table {
+  width: 100%;
+  color: #909CB8;
+}
+section.home .panel-events table tr.PUBLIC_CUSTOM_EVENT .type-symbol {
+  color: #FFB900;
+}
+section.home .panel-events table tr.CLASS_CUSTOM_EVENT .type-symbol {
+  color: #FA002E;
+}
+section.home .panel-events table td {
+  border-top: #DCE2EE solid 1px;
+  border-bottom: #DCE2EE solid 1px;
+  height: 40px;
+  padding: 6px 0;
+}
+section.home .panel-events table td.type-symbol {
+  font-size: 10px;
+  padding: 0 4px;
+}
+section.home .panel-events table td.day {
+  width: 80px;
+}
+section.home .panel-events table td.desc {
+  font-size: 14px;
+  text-align: justify;
+}
+section.home .panel-count {
+  background-color: #4554D1;
+}
+section.home .panel-count .icon {
+  background-color: white;
+  color: #4554D1;
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+section.home .panel-count .count {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+section.home .panel-count .unit {
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 0.6;
+}
+section.home .panel-count.panel-orange {
+  background-color: #FFB900;
+}
+section.home .panel-count.panel-orange .icon {
+  color: #FFB900;
+}
+section.home .panel-count.panel-green {
+  background-color: #00E049;
+}
+section.home .panel-count.panel-green .icon {
+  color: #00E049;
+}
+section.home .panel-count.panel-red {
+  background-color: #FA002E;
+}
+section.home .panel-count.panel-red .icon {
+  color: #FA002E;
+}
+
+ul.student-list {
+  list-style: none;
+  padding: 0;
+  color: #909CB8;
+  margin: 0;
+}
+ul.student-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 6px;
+  cursor: pointer;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+ul.student-list li:hover:not(.add) {
+  background-color: #f0f0f0;
+}
+ul.student-list li.active {
+  border-right: 6px solid #4554D1;
+  color: #4554D1;
+}
+ul.student-list li.add {
+  font-size: 40px;
+  cursor: default;
+}
+ul.student-list li.add i {
+  cursor: pointer;
+}
+ul.student-list li div.row-num {
+  width: 20px;
+  text-align: center;
+}
+ul.student-list li div.image {
+  width: 50px;
+  height: 50px;
+  line-height: 54px;
+  background-color: #DCE2EE;
+  color: #909CB8;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+}
+ul.student-list li div.image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: -4px;
+}
+ul.student-list li div.name {
+  text-align: right;
+  margin-right: 5px;
+  line-height: 1.2;
+}
+ul.student-list li div.name .fname {
+  font-size: 14px;
+}
+ul.student-list li div.name .lname {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+div.student-information {
+  text-align: center;
+}
+div.student-information div.student-image {
+  background-color: #DCE2EE;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  cursor: pointer;
+  position: relative;
+}
+div.student-information div.student-image i.fa-camera {
+  color: #909CB8;
+  font-size: 50px;
+}
+div.student-information div.student-image img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+div.student-information div.student-image div.delete {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 24px;
+  background-color: #FA002E;
+  color: white;
+  cursor: pointer;
+  padding-top: 3px;
+  opacity: 0.8;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+div.student-information div.student-image div.delete:hover {
+  opacity: 1;
+}
+
+div.student-notes div.notes > .note {
+  text-align: right;
+  margin-top: 10px;
+}
+div.student-notes div.notes > .note > .date {
+  color: #909CB8;
+}
+div.student-notes div.notes > .note > .text {
+  background-color: #EDEDED;
+  color: #40495e;
+  border-radius: 10px 0 10px 10px;
+  padding: 10px;
+  margin-right: 10px;
+}
+div.student-notes div.notes > .note > .text span.text {
+  white-space: pre-line;
+}
+div.student-notes div.notes > .note > .text div.btns {
+  font-size: 10px;
+  color: #909CB8;
+}
+div.student-notes div.notes > .note > .text div.btns > div {
+  cursor: pointer;
+}
+div.student-notes div.collapse-btn {
+  background-color: #3A237E;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  height: 20px;
+  line-height: 18px;
+}
+div.student-notes div.input {
+  height: 300px;
+}
+
+ul.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+ul.event-list li {
+  font-size: 14px;
+  margin: 5px;
+  color: #909CB8;
+}
+ul.event-list li input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+ul.event-list li .event-color {
+  vertical-align: middle;
+  line-height: 18px;
+}
+
+.event-color {
+  font-size: 12px;
+  float: left;
+}
+.event-color.session {
+  color: #4554D1;
+}
+.event-color.occasion {
+  color: #00E049;
+}
+.event-color.class_custom_event {
+  color: #FA002E;
+}
+.event-color.public_custom_event {
+  color: #FFB900;
+}
+.event-color.home_work {
+  color: #DC00F4;
+}
+.event-color.other_sessions {
+  color: #AC611B;
+}
+
+table.calendar {
+  width: 100%;
+  text-align: center;
+}
+table.calendar th {
+  border-bottom: solid 1px #909CB8;
+  color: #909CB8;
+  padding: 10px;
+}
+table.calendar td {
+  padding: 10px;
+}
+table.calendar td div.day {
+  background-color: white;
+  color: #909CB8;
+  width: 100%;
+  min-width: 100px;
+  height: 150px;
+  border-radius: 40px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+table.calendar td div.day div.title {
+  border-bottom: solid 1px #909CB8;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+table.calendar td div.day div.events {
+  padding: 10px 5px;
+}
+table.calendar td div.day div.events div.event {
+  padding: 2px;
+  padding-bottom: 16px;
+  margin: 2px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+table.calendar td div.day div.events div.event div.desc {
+  position: absolute;
+  background-color: black;
+  color: white;
+  visibility: hidden;
+  border-radius: 6px;
+  padding: 3px;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 300;
+  white-space: pre-line;
+}
+table.calendar td div.day div.events div.event:hover div.desc {
+  visibility: visible;
+}
+table.calendar td div.day div.events div.event:hover div.desc::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+table.calendar td div.day div.btns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  color: white;
+}
+table.calendar td div.day div.btns:hover {
+  opacity: 1;
+}
+table.calendar td div.day div.btns > div {
+  font-size: 14px;
+  line-height: 36px;
+  cursor: pointer;
+}
+table.calendar td div.day.holiday div.title {
+  background-color: #FA002E;
+  color: white;
+  border-bottom: solid 1px white;
+}
+table.calendar td div.day.today div.title {
+  background-color: #4554D1;
+  color: white;
+  border-bottom: solid 1px white;
+}
+
+ul.class-book-dates {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+ul.class-book-dates li {
+  color: #909CB8;
+  cursor: pointer;
+}
+ul.class-book-dates li.active {
+  color: #4554D1;
+  font-weight: bold;
+}
+ul.class-book-dates li.add {
+  font-size: 40px;
+}
+ul.class-book-dates li.line {
+  cursor: default;
+  font-size: 40px;
+}
+ul.class-book-dates li .date {
+  font-size: 11px;
+}
+
+.class-book-section {
+  width: 110px;
+  height: 110px;
+  border-radius: 40px;
+  margin: 12px 0;
+  background-color: #DCDFE6;
+  color: #909CB8;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 12px;
+}
+.class-book-section.router-link-active {
+  background-color: white;
+  color: #4554D1;
+  box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
+}
+.class-book-section .icon {
+  font-size: 44px;
+}
+.class-book-section .title {
+  line-height: 0.2;
+}
+
+.scroll-y {
+  overflow-y: auto;
+  overflow-y: overlay;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.scroll-y::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scroll-y::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.scroll-y::-webkit-scrollbar-thumb {
+  background: #909CB8;
+  border-radius: 3px;
+}
+.scroll-y::-webkit-scrollbar-thumb:hover {
+  background: #4554D1;
+}
+
+div.attendance table, div.scores table {
+  border-collapse: collapse;
+}
+div.attendance table td.actions i.btn-attendance, div.attendance table td.actions i.btn-score, div.scores table td.actions i.btn-attendance, div.scores table td.actions i.btn-score {
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+  vertical-align: middle;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+div.attendance table td.actions i.btn-attendance.btn-present, div.attendance table td.actions i.btn-score.btn-present, div.scores table td.actions i.btn-attendance.btn-present, div.scores table td.actions i.btn-score.btn-present {
+  color: #00E049;
+}
+div.attendance table td.actions i.btn-attendance.btn-absent, div.attendance table td.actions i.btn-score.btn-absent, div.scores table td.actions i.btn-attendance.btn-absent, div.scores table td.actions i.btn-score.btn-absent {
+  color: #FA002E;
+}
+div.attendance table td.actions i.btn-attendance.btn-delay, div.attendance table td.actions i.btn-score.btn-delay, div.scores table td.actions i.btn-attendance.btn-delay, div.scores table td.actions i.btn-score.btn-delay {
+  color: #FFB900;
+  margin-top: -1px;
+  margin-right: -1px;
+}
+div.attendance table td.actions i.btn-attendance.btn-plus, div.attendance table td.actions i.btn-score.btn-plus, div.scores table td.actions i.btn-attendance.btn-plus, div.scores table td.actions i.btn-score.btn-plus {
+  color: #00E049;
+  margin-top: -1px;
+  margin-right: -1px;
+  opacity: 1;
+}
+div.attendance table td.actions i.btn-attendance.btn-minus, div.attendance table td.actions i.btn-score.btn-minus, div.scores table td.actions i.btn-attendance.btn-minus, div.scores table td.actions i.btn-score.btn-minus {
+  color: #FA002E;
+  margin-top: -1px;
+  margin-left: -1px;
+  opacity: 1;
+}
+div.attendance table td.actions i.btn-attendance.active, div.attendance table td.actions i.btn-score.active, div.scores table td.actions i.btn-attendance.active, div.scores table td.actions i.btn-score.active {
+  opacity: 1;
+}
+div.attendance table td.actions div.delay, div.attendance table td.actions div.score, div.scores table td.actions div.delay, div.scores table td.actions div.score {
+  height: 40px;
+  border: solid 1px #DCE2EE;
+  border-radius: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+div.attendance table td.actions div.delay input, div.attendance table td.actions div.score input, div.scores table td.actions div.delay input, div.scores table td.actions div.score input {
+  width: 60px;
+  vertical-align: middle;
+  margin-left: 10px;
+  border: none;
+  text-align: center;
+  direction: ltr;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+div.attendance table td.actions div.delay input:focus, div.attendance table td.actions div.score input:focus, div.scores table td.actions div.delay input:focus, div.scores table td.actions div.score input:focus {
+  outline: none;
+}
+div.attendance table td.actions div.delay input::-webkit-outer-spin-button, div.attendance table td.actions div.delay input::-webkit-inner-spin-button, div.attendance table td.actions div.score input::-webkit-outer-spin-button, div.attendance table td.actions div.score input::-webkit-inner-spin-button, div.scores table td.actions div.delay input::-webkit-outer-spin-button, div.scores table td.actions div.delay input::-webkit-inner-spin-button, div.scores table td.actions div.score input::-webkit-outer-spin-button, div.scores table td.actions div.score input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+div.attendance table td.actions div.delay input[type=number], div.attendance table td.actions div.score input[type=number], div.scores table td.actions div.delay input[type=number], div.scores table td.actions div.score input[type=number] {
+  -moz-appearance: textfield;
+}
+div.attendance table td.actions div.score input, div.scores table td.actions div.score input {
+  text-align: center;
+  margin-left: 0;
+  width: 40px;
+}
+
+section.grades table {
+  text-align: center;
+}
+section.grades table th.grade-val, section.grades table td.grade-val {
+  width: 100px;
+  padding: 5px;
+  direction: ltr;
+}
+section.grades table th.grade-val i, section.grades table td.grade-val i {
+  cursor: pointer;
+}
+section.grades table th.grade-val input, section.grades table td.grade-val input {
+  width: 60px;
+  text-align: center;
+  direction: ltr;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+  margin: auto;
+  padding: 0;
+}
+section.grades table th.grade-val input::-webkit-outer-spin-button, section.grades table th.grade-val input::-webkit-inner-spin-button, section.grades table td.grade-val input::-webkit-outer-spin-button, section.grades table td.grade-val input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+section.grades table th.grade-val input[type=number], section.grades table td.grade-val input[type=number] {
+  -moz-appearance: textfield;
+}
+section.grades table td.add, section.grades table th.add {
+  width: 40px;
+}
+section.grades table td.add i, section.grades table th.add i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
