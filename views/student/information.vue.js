@@ -8,7 +8,7 @@ module.exports = {
     template: `
         <div class="student-information p-3 row justify-content-center">
             <br>
-            <div class="col-4">
+            <div class="col-4 text-right">
                 <div class="row">
                     <div class="col">
                         <br>
@@ -25,31 +25,50 @@ module.exports = {
                         </div>
                     </div>
                 </div>
-                <br>
-                <div class="input-group mb-2 dir-ltr">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
-                    </div>
-                    <input type="email" class="form-control dir-ltr" placeholder="email" v-model="student.email">
-                </div>
-                <br>
+                <label>موبایل</label>
                 <div class="input-group mb-2 dir-ltr">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
                     </div>
                     <input type="text" class="form-control dir-ltr" placeholder="موبایل" v-model="student.mobile">
                 </div>
-                <br>
+                <label>موبایل مادر</label>
+                <div class="input-group mb-2 dir-ltr">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+                    </div>
+                    <input type="text" class="form-control dir-ltr" placeholder="موبایل مادر" v-model="student.mobile_mother">
+                </div>
+                <label>موبایل پدر</label>
+                <div class="input-group mb-2 dir-ltr">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+                    </div>
+                    <input type="text" class="form-control dir-ltr" placeholder="موبایل پدر" v-model="student.mobile_father">
+                </div>
+                <label>تلفن منزل</label>
                 <div class="input-group mb-2 dir-ltr">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-phone-alt"></i></div>
                     </div>
                     <input type="text" class="form-control dir-ltr" placeholder="تلفن منزل" v-model="student.phone">
                 </div>
+            </div>
+            <div class="col-4 text-right">
+                <label>ایمیل</label>
+                <div class="input-group mb-2 dir-ltr">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                    </div>
+                    <input type="email" class="form-control dir-ltr" placeholder="email" v-model="student.email">
+                </div>
+                <label>آدرس منزل</label>
+                <textarea rows="3" class="form-control" placeholder="آدرس منزل" v-model="student.address"></textarea>
+                <label>توضیحات</label>
+                <textarea rows="8" class="form-control" placeholder="توضیحات" v-model="student.description"></textarea>
+            </div>
+            <div class="col-8">
                 <br>
-                <textarea rows="4" class="form-control" placeholder="آدرس منزل" v-model="student.address"></textarea>
-                <br>
-                
                 <div class="d-flex">
                     <button class="btn btn-success" @click="save">ذخیره</button>
                     <button class="btn btn-outline-secondary mr-2" @click="cancel">انصراف</button>
@@ -65,8 +84,11 @@ module.exports = {
                 last_name: null,
                 email: null,
                 mobile: null,
+                mobile_mother: null,
+                mobile_father: null,
                 phone: null,
                 address: null,
+                description: null
             },
             path: null,
         }

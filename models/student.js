@@ -10,8 +10,11 @@ module.exports = (sequelize, DataTypes) => {
     last_name: DataTypes.STRING,
     email: DataTypes.STRING,
     mobile: DataTypes.STRING,
+    mobile_mother: DataTypes.STRING,
+    mobile_father: DataTypes.STRING,
     phone: DataTypes.STRING,
     address: DataTypes.STRING,
+    description: DataTypes.STRING,
     image_updated_at: DataTypes.DATE,
     hasImage: {
       type: DataTypes.VIRTUAL,

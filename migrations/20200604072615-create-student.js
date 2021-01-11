@@ -24,10 +24,19 @@ module.exports = {
       mobile: {
         type: Sequelize.STRING
       },
+      mobile_mother: {
+        type: Sequelize.STRING
+      },
+      mobile_father: {
+        type: Sequelize.STRING
+      },
       phone: {
         type: Sequelize.STRING
       },
       address: {
+        type: Sequelize.STRING
+      },
+      description: {
         type: Sequelize.STRING
       },
       image_updated_at: {
