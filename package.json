@@ -25,7 +25,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@popperjs/core": "^2.4.2",
     "bootstrap": "^4.4.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "hot-formula-parser": "^3.0.2",
     "jimp": "^0.13.0",
     "moment": "^2.25.1",
