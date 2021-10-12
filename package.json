@@ -17,7 +17,7 @@
   "author": "M.R.Vahed",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^8.2.5",
+    "electron": "^11.5.0",
     "electron-rebuild": "^1.11.0",
     "sequelize-cli": "^5.5.1"
   },
