@@ -10,16 +10,16 @@ module.exports = {
                 <div class="panel d-flex align-items-stretch" style="border-radius: 50px">
                     <div class="scroll-y col mt-3 mb-3">
                         <ul class="class-book-dates">
-                            <template v-for="session in sessionList">
+                            <li class="add">
+                                <i class="fas fa-plus-circle" @click="showDatePicker=true"></i>                                   
+                            </li>
+                            <template v-for="session in sessionList.slice().reverse()">
+                                <li class="line">|</li>
                                 <li :title="jmoment(session.date).format('dddd jD / jMM / jYYYY')" @click="setActiveSession(session)" :class="{active: session.id == $route.params.id}">
                                     <div class="day">{{ jmoment(session.date).format("YYYYMMDD") == jmoment().format("YYYYMMDD") ? "امروز" : jmoment(session.date).format("dddd") }}</div>
                                     <div class="date" v-if="jmoment(session.date).format('YYYYMMDD') != jmoment().format('YYYYMMDD')">{{ pdigit( jmoment(session.date).format("jD / jMMMM") ) }}</div>
                                 </li>
-                                <li class="line">|</li>
                             </template>
-                            <li class="add">
-                                <i class="fas fa-plus-circle" @click="showDatePicker=true"></i>                                   
-                            </li>
                         </ul>
                         <date-picker
                             v-model="date"

@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
         set: function (value) {
             this.setDataValue('content', JSON.stringify(value));
         },
-      }
+    },
+    brief: DataTypes.STRING,
   }, {
     underscored: true,
     tableName: 'LessonPlans'

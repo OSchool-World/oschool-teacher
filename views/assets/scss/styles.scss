@@ -73,8 +73,10 @@ $nav-width: 80px;
 * {
     direction: rtl;
     box-sizing: border-box;
-    font-family: IRANSans;
+    font-family: IRANSans;    
+}
 
+*:not(.selectable):not(.selectable tr):not(.selectable tr td):not(.selectable tr th) {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

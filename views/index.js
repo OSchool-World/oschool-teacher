@@ -19,6 +19,7 @@ const PClassBook = require('./class-book.vue');
     const PClassBook_HomeWorks = require('./class-book/home_works.vue');
 const PGrades = require('./grades.vue');
     const PGradeItem = require('./grades/grade-item.vue');
+const PClassBookReport = require('./class-book-report.vue');
 const PAbout = require('./about.vue');
 
 String.prototype.toPerisanDigits = function () {
@@ -60,6 +61,7 @@ const router = new VueRouter({
         { path: '/grades', name: 'grades', component: PGrades, children: [
             { path: 'grade_item/:id?', name: 'grade_item', component: PGradeItem },
         ]},
+        { path: '/class_book_report', name: 'class_book_report', component: PClassBookReport},
         { path: '/about', name: 'about', component: PAbout},
     ]
 });
